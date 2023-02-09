@@ -107,7 +107,7 @@ impl TableStruct {
         Dimension { widths, heights }
     }
 
-    fn buffers(&self, writer: &BufferWriter) -> Result<Vec<Buffer>> {
+    pub fn buffers(&self, writer: &BufferWriter) -> Result<Vec<Buffer>> {
         let table_dimension = self.required_dimension();
         let row_dimensions: Vec<RowDimension> = table_dimension.clone().into();
         let mut row_dimensions = row_dimensions.into_iter();
